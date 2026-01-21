@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Финал 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #ffe6f2, #fff);
+  overflow-x: hidden;
+}
+
+/* ТЕКСТ */
+h1 {
+  text-align: center;
+  margin-top: 40px;
+  animation: fadeDown 1.5s ease;
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+  margin: 20px;
+  animation: fadeUp 1.5s ease;
+}
+
+/* ❤️ СЕРДЦЕ */
+.heart-draw {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+svg {
+  width: 140px;
+  height: 140px;
+}
+
+.heart-path {
+  fill: none;
+  stroke: #ff5fa2;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+
+  animation: drawHeart 2.8s ease forwards;
+}
+
+/* ФОТО */
+.photos {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.photos img {
+  width: 40%;
+  margin: 2%;
+  border-radius: 20px;
+  animation: zoomIn 1.5s ease;
+}
+
+/* АНИМАЦИИ */
+@keyframes fadeDown {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes zoomIn {
+  from {opacity: 0; transform: scale(0.85);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+@keyframes drawHeart {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ЛЕТАЮЩИЕ СЕРДЦА */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 20px;
+  animation: fly 5s linear infinite;
+}
+
+@keyframes fly {
+  from {transform: translateY(0); opacity: 1;}
+  to {transform: translateY(-100vh); opacity: 0;}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Спасибо, что ты есть 💖</h1>
+
+<p>
+  Пусть твоя жизнь будет наполнена счастьем,<br>
+  улыбками и тёплыми моментами ✨
+</p>
+
+<!-- ❤️ РОВНОЕ СЕРДЦЕ (АНИМАЦИЯ СТАРТУЕТ СРАЗУ) -->
+<div class="heart-draw">
+  <svg viewBox="0 0 100 90">
+    <path class="heart-path"
+      d="
+        M50 80
+        C20 60, 5 40, 25 25
+        C40 15, 50 30, 50 30
+        C50 30, 60 15, 75 25
+        C95 40, 80 60, 50 80
+      "
+    />
+  </svg>
+</div>
+
+<div class="photos">
+  <img src="ll.jpeg">
+  <img src="bb.jpeg">
+</div>
+
+<!-- 💗 ЛЕТАЮЩИЕ СЕРДЦА -->
+<script>
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💗";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}, 400);
+</script>
+
+</body>
+</html>
+
+
