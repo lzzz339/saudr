@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>С днём рождения 💕</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI,sans-serif;
+  background:linear-gradient(135deg,#fbc2eb,#a18cd1);
+  color:white;
+  text-align:center;
+  overflow-x:hidden;
+}
+.container{padding:50px 20px}
+.photos{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+.photos img{
+  width:200px;
+  height:260px;
+  object-fit:cover;
+  border-radius:20px;
+}
+button{
+  margin-top:30px;
+  padding:15px 35px;
+  border:none;
+  border-radius:30px;
+  background:#ffd1fa;
+  font-size:1.1em;
+  cursor:pointer;
+}
+.fade{animation:fade 1.5s ease}
+@keyframes fade{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.heart{
+  position:fixed;
+  font-size:20px;
+  animation:float 6s linear;
+  opacity:.7;
+}
+@keyframes float{
+  from{transform:translateY(100vh)}
+  to{transform:translateY(-10vh)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container fade">
+  <h1>С днём рождения 🎂</h1>
+  <p>В этот прекрасный день я хочу поздравить тебя,
+    надеюсь эта открытка отсанется памятью на долго.:></p>
+
+  <div class="photos">
+    <img src="WhatsApp Image 2026-01-21 at 01.12.21.jpeg">
+    <img src="pp.jpeg">
+    <img src="cc.jpeg">
+  </div>
+
+  <button onclick="location.href='index2.html'">➜</button>
+</div>
+
+<script>
+setInterval(()=>{
+  const h=document.createElement('div');
+  h.className='heart';
+  h.innerText='💗';
+  h.style.left=Math.random()*100+'vw';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},700);
+</script>
+
+</body>
+</html>
