@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Наши моменты 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #fbe7ff, #fff);
+}
+
+h1 {
+  text-align: center;
+  margin: 30px 0;
+}
+
+/* ГАЛЕРЕЯ */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 20px 40px; /* ← СДЕЛАЛ МЕНЬШЕ */
+}
+
+/* ФОТО 3:4 */
+.gallery img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+/* ХОВЕР */
+.gallery img:hover {
+  transform: scale(1.04);
+}
+
+/* КНОПКА */
+.button {
+  display: block;
+  margin: 40px auto;
+  padding: 14px 28px;
+  background: #f6b4d8;
+  color: black;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 20px;
+  width: fit-content;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Всеее эти люди благодарны что ты есть у них в жизни
+    (и я в том числе) 📸</h1>
+
+<div class="gallery">
+  <img src="photo2.jpeg">
+  <img src="photo3.jpeg">
+  <img src="p1.jpeg">
+
+  <img src="photo8.jpeg">
+  <img src="aa.jpeg">
+  <img src="photo16.jpeg">
+
+</div>
+
+<a href="index3.html" class="button">➜</a>
+
+</body>
+</html>
+
